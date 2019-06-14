@@ -12,7 +12,6 @@ namespace IEnumerable
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with IEnumerable / IEnumerator *****\n ForEach:");
-
             Garage carLot = new Garage();
             // Hand over each car in the collection?
             foreach (Car c in carLot)
