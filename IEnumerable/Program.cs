@@ -17,18 +17,18 @@ namespace IEnumerable
             foreach (Car c in carLot)
             {
                 Console.WriteLine("{0} is going {1} MPH",
-                c.PetName, c.CurrentSpeed);
+                    c.PetName, c.CurrentSpeed);
             }
 
             Console.WriteLine("Manually work with IEnumerator:");
 
-           
+
             // Manually work with IEnumerator.
             IEnumerator i = carLot.GetEnumerator();
             while (i.MoveNext())
             {
                 //i.MoveNext();
-                Car myCar = (Car)i.Current;
+                Car myCar = (Car) i.Current;
                 Console.WriteLine("{0} is going {1} MPH", myCar.PetName, myCar.CurrentSpeed);
             }
 
@@ -38,12 +38,12 @@ namespace IEnumerable
 
             //1:*
             Console.WriteLine("Other example of IEnumerator:");
-            Display(new List<bool> { true, false, true });
+            Display(new List<bool> {true, false, true});
             //*
 
             //2:**
             IEnumerable<int> result = from value in Enumerable.Range(0, 2)
-                                      select value;
+                select value;
 
             // Loop.
             foreach (int value in result)
@@ -71,6 +71,7 @@ namespace IEnumerable
             {
                 sum += value;
             }
+
             // Write result.
             Console.WriteLine("SUMMED 2D ELEMENTS: " + sum);
             //***
@@ -78,13 +79,14 @@ namespace IEnumerable
 
             //4:****
             Example example = new Example(
-            new string[] { "cat", "dog", "bird" });
+                new string[] {"cat", "dog", "bird"});
             // The foreach-loop calls the generic GetEnumerator method.
             // ... It then uses the List's Enumerator.
             foreach (string element in example)
             {
                 Console.WriteLine(element);
             }
+
             //****
             Console.ReadLine();
         }
@@ -110,6 +112,7 @@ namespace IEnumerable
         }
     }
 
+    #region des
 
     /*Sadly, the compiler informs you that the Garage class does not implement a method named GetEnumerator(). 
     This method is formalized by the IEnumerable interface, 
@@ -144,4 +147,6 @@ namespace IEnumerable
         As the System.Array type(as well as many other collection classes)
         already implements IEnumerable and IEnumerator, 
         you can simply delegate the request to the System.Array as follows:*/
+
+    #endregion
 }
